@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>F8 Iframe</title>
+        <link rel="stylesheet" href="./assets/css/styles.css" />
+    </head>
+    <body>
+        <div class="container">
+            <!-- Code editor -->
+            <textarea name="" id="editor" cols="30" rows="10" class="editor" placeholder="Code..."></textarea>
+
+            <!-- Browser -->
+            <div>
+                <iframe src="" frameborder="0" id="browser" class="browser"></iframe>
+            </div>
+        </div>
+
+        <script>
+            const editor = document.querySelector("#editor");
+            const browser = document.querySelector("#browser");
+
+            editor.oninput = function (e) {
+                browser.srcdoc = e.target.value;
+            };
+        </script>
+    </body>
+</html>
